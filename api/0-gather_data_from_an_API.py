@@ -5,11 +5,11 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-    employeeID = argv[1]
+    empID = argv[1]
     employeeData = requests.get(
-        f'https://jsonplaceholder.typicode.com/users/{employeeID}')
+        f'https://jsonplaceholder.typicode.com/users/{empID}')
     employeeTODOs = requests.get(
-        f'https://jsonplaceholder.typicode.com/users/{employeeID}/todos').json()
+        f'https://jsonplaceholder.typicode.com/users/{empID}/todos').json()
     employeeName = employeeData.json()["name"]
     completedTasks = []
     countCompletedTasks = 0
